@@ -1,3 +1,7 @@
+package `2024`
+
+import println
+
 fun main() {
     fun part1(input: List<String>): Long {
         val inputLine = input.first()

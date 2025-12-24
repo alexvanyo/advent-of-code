@@ -1,6 +1,7 @@
-import androidx.compose.ui.unit.IntOffset
+package `2024`
+
+import println
 import java.math.BigInteger
-import kotlin.math.min
 
 fun main() {
     data class Case(

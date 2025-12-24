@@ -1,3 +1,7 @@
+package `2024`
+
+import println
+
 fun main() {
     fun choose(set: Set<String>, amount: Int): Set<Set<String>> =
         if (amount == 0) {

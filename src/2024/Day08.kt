@@ -1,4 +1,8 @@
+package `2024`
+
 import androidx.compose.ui.unit.IntOffset
+import gcd
+import println
 import kotlin.math.abs
 
 fun main() {

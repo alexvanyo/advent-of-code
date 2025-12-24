@@ -1,3 +1,9 @@
+package `2024`
+
+import parseIntPair
+import println
+import readInput
+
 fun main() {
     fun part1(input: List<String>): Int {
         val inputCharArray = input.map {

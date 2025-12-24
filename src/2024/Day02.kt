@@ -1,3 +1,10 @@
+package `2024`
+
+import parseIntList
+import parseIntPair
+import println
+import readInput
+import removeIndices
 import kotlin.math.abs
 
 fun main() {

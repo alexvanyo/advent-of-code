@@ -1,3 +1,7 @@
+package `2024`
+
+import println
+
 fun main() {
     fun calculateNext(value: Long): Long {
         val a = value * 64L

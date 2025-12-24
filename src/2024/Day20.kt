@@ -1,7 +1,9 @@
+package `2024`
+
 import androidx.compose.ui.unit.IntOffset
+import manhattanDistance
+import println
 import java.util.*
-import kotlin.math.abs
-import kotlin.math.sqrt
 import kotlin.properties.Delegates
 
 fun main() {

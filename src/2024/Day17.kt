@@ -1,3 +1,7 @@
+package `2024`
+
+import println
+
 fun main() {
     data class State(
         val a: Long,

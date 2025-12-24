@@ -1,6 +1,8 @@
+package `2024`
+
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
-import kotlin.math.floor
+import println
 
 fun main() {
     fun part1(

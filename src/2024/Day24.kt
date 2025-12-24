@@ -1,3 +1,6 @@
+package `2024`
+
+import println
 import kotlin.random.Random
 
 sealed interface Gate {

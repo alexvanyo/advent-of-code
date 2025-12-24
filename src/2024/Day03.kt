@@ -1,3 +1,8 @@
+package `2024`
+
+import println
+import readInput
+
 fun main() {
     fun part1(input: List<String>): Int =
         Regex("""mul\((\d{1,3}),(\d{1,3})\)""").findAll(input.joinToString()).sumOf {

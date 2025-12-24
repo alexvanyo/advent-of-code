@@ -8,7 +8,7 @@ import kotlin.math.abs
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = Path("src/$name.txt").readText().trim().lines()
+fun readInput(year: Int, name: String) = Path("src/$year/$name.txt").readText().trim().lines()
 
 fun String.parseIntPair(): Pair<Int, Int> {
     val (a, b) = split(Regex("\\s+"))

@@ -1,3 +1,9 @@
+package `2024`
+
+import parseIntPair
+import println
+import readInput
+
 fun main() {
     fun part1(parsedRules: List<Pair<Int, Int>>, parsedUpdates: List<List<Int>>): Int =
         parsedUpdates.sumOf { parsedUpdate ->

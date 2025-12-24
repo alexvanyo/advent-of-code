@@ -1,4 +1,7 @@
+package `2024`
+
 import androidx.compose.ui.unit.IntOffset
+import println
 
 fun main() {
     val cardinalOffsets = listOf(
