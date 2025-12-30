@@ -1,6 +1,7 @@
 package `2025`
 
 import androidx.compose.ui.unit.IntOffset
+import getMooreNeighbors
 import println
 
 fun main() {
@@ -23,17 +24,9 @@ fun main() {
         var accessible = 0
         (0 until rows).forEach { y ->
             (0 until columns).forEach { x ->
-                if (IntOffset(x, y) in paperLocations) {
-                    val neighboringPapers: Int = listOf(
-                        IntOffset(x - 1, y - 1),
-                        IntOffset(x, y - 1),
-                        IntOffset(x + 1, y - 1),
-                        IntOffset(x - 1, y),
-                        IntOffset(x + 1, y),
-                        IntOffset(x - 1, y + 1),
-                        IntOffset(x, y + 1),
-                        IntOffset(x + 1, y + 1),
-                    ).sumOf {
+                val offset = IntOffset(x, y)
+                if (offset in paperLocations) {
+                    val neighboringPapers: Int = offset.getMooreNeighbors().sumOf {
                         if (it in paperLocations) {
                             1
                         } else {
@@ -64,17 +57,9 @@ fun main() {
             nextPaperLocations = paperLocations.toMutableSet()
             (0 until rows).forEach { y ->
                 (0 until columns).forEach { x ->
-                    if (IntOffset(x, y) in paperLocations) {
-                        val neighboringPapers = listOf(
-                            IntOffset(x - 1, y - 1),
-                            IntOffset(x, y - 1),
-                            IntOffset(x + 1, y - 1),
-                            IntOffset(x - 1, y),
-                            IntOffset(x + 1, y),
-                            IntOffset(x - 1, y + 1),
-                            IntOffset(x, y + 1),
-                            IntOffset(x + 1, y + 1),
-                        ).sumOf {
+                    val offset = IntOffset(x, y)
+                    if (offset in paperLocations) {
+                        val neighboringPapers = offset.getMooreNeighbors().sumOf {
                             if (it in paperLocations) {
                                 1
                             } else {
@@ -84,7 +69,7 @@ fun main() {
 
                         if (neighboringPapers < 4) {
                             removed++
-                            nextPaperLocations.remove(IntOffset(x, y))
+                            nextPaperLocations.remove(offset)
                         }
                     }
                 }

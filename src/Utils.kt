@@ -50,3 +50,31 @@ tailrec fun gcd(a: Long, b: Long): Long =
     if (b == 0L) abs(a) else gcd(b, a.mod(b))
 
 val IntOffset.manhattanDistance get() = abs(x) + abs(y)
+
+/**
+ * Returns the 8 diagonal and orthogonal neighbors to the [IntOffset].
+ */
+fun IntOffset.getMooreNeighbors(): Set<IntOffset> = mooreNeighborOffsets.map { it + this }.toSet()
+
+private val mooreNeighborOffsets = listOf(
+    IntOffset(-1, -1),
+    IntOffset(0, -1),
+    IntOffset(1, -1),
+    IntOffset(-1, 0),
+    IntOffset(1, 0),
+    IntOffset(-1, 1),
+    IntOffset(0, 1),
+    IntOffset(1, 1),
+)
+
+/**
+ * Returns the 4 orthogonal neighbors to the [IntOffset].
+ */
+fun IntOffset.getVonNeumannNeighbors(): Set<IntOffset> = vonNeumannNeighborOffsets.map { it + this }.toSet()
+
+private val vonNeumannNeighborOffsets = listOf(
+    IntOffset(0, -1),
+    IntOffset(-1, 0),
+    IntOffset(1, 0),
+    IntOffset(0, 1),
+)
