@@ -1,7 +1,5 @@
 package `2025`
 
-import androidx.compose.ui.unit.IntOffset
-import getMooreNeighbors
 import println
 import java.util.PriorityQueue
 
@@ -15,13 +13,10 @@ data class RangeEdge(
     val isStart: Boolean
 ) : Comparable<RangeEdge> {
     override fun compareTo(other: RangeEdge): Int =
-        if (isStart == other.isStart) {
-            id.compareTo(other.id)
-        } else if (isStart) {
-            -1
-        } else {
-            1
-        }
+        compareBy(
+            RangeEdge::id,
+            { if (it.isStart) 0 else 1 },
+        ).compare(this, other)
 }
 
 fun main() {
@@ -56,9 +51,8 @@ fun main() {
                     false
                 )
             )
-
-        }.also { it.println() }
-        val queue = PriorityQueue<RangeEdge>(rangeEdges).also { it.toList().println() }
+        }
+        val queue = PriorityQueue<RangeEdge>(rangeEdges)
         var validCount = 0L
         var rangeStarts = 0L
         var firstStart: Long? = null
