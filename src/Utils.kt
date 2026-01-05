@@ -78,3 +78,11 @@ private val vonNeumannNeighborOffsets = listOf(
     IntOffset(1, 0),
     IntOffset(0, 1),
 )
+
+public fun Iterable<Long>.product(): Long {
+    var product: Long = 1L
+    for (element in this) {
+        product *= element
+    }
+    return product
+}
